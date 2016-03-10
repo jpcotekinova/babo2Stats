@@ -51,7 +51,7 @@ statsRatioFile.write("\n=====\n")
 statsRatioFile.write("Ratio")
 statsRatioFile.write("\n=====\n")
 for player in stats:
-    statsRatio[player] = stats[player]/statsRatioRaw[player]
+    statsRatio[player] = float(stats[player])/float(statsRatioRaw[player])
 
 od = OrderedDict(sorted(statsRatio.items(), key=lambda t: t[1], reverse= True))
 
