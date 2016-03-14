@@ -33,6 +33,8 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+*.txt
+*.log
 
 # Unit test / coverage reports
 htmlcov/
