@@ -23,7 +23,7 @@ print playerList
 playerListFile = open('SQL-playerList.txt', 'w')
 
 for player in playerList:
-    playerListFile.write("INSERT INTO Player (name) VALUES (" +player+")\n")
+    playerListFile.write("INSERT INTO Player (name) VALUES ('" +player+"');\n")
 
 playerListFile.close()
 playerfile.close()

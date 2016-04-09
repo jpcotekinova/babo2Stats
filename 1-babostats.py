@@ -6,7 +6,9 @@ killFile = open('killFile.txt', 'w')
 
 playerKilledDict = {}
 playerWeaponDict = {}
+index = 0
 for item in content:
+    index = index + 1
     if item.find("Player")==0:
         item = item.replace("Player ", "Player:")
         item = item.replace(" ID:", "ID:")        
@@ -28,10 +30,12 @@ for item in content:
                 if item.find("R ") != 0:
                     if item.find("----->") != -1:
                         item = item.replace("\"", ".")
-                        item = item.replace("'", ".")
                         item = item.replace(" -----", ";")
                         item = item.replace("-----> ", ";")
-                        
+                        item = item.replace(" ", "")
+                        item = item.replace("'", "")
+                        killFile.write(str(index))
+                        killFile.write(";")
                         killFile.write(item)
                         killFile.write("\n")
             
