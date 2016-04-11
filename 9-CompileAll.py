@@ -6,19 +6,34 @@ finalFile = open('SQL-All.txt', 'w')
 
 #playerfile
 with open("SQL-game.txt") as gamefile:
-    finalFile.write(gamefile.read().splitlines())
+    content = (gamefile.read().splitlines())
+	
+for item in content:
+	finalFile.write(item+"\n")
 	
 with open("SQL-playerList.txt") as playerfile:
-    finalFile.write(playerfile.read().splitlines())
+    content = (playerfile.read().splitlines())
+	
+for item in content:
+	finalFile.write(item+"\n")
 	
 with open("SQL-playerTeamList.txt") as playerteamfile:
-    finalFile.write(playerteamfile.read().splitlines())
+    content = (playerteamfile.read().splitlines())
+	
+for item in content:
+	finalFile.write(item+"\n")
 	
 with open("SQL-shotList.txt") as shotfile:
-    finalFile.write(shotfile.read().splitlines())
+    content = (shotfile.read().splitlines())
+	
+for item in content:
+	finalFile.write(item+"\n")
 	
 with open("SQL-weaponList.txt") as weaponfile:
-    finalFile.write(weaponfile.read().splitlines())
+    content = (weaponfile.read().splitlines())
+	
+for item in content:
+	finalFile.write(item+"\n")
 
 finalFile.close()
 gamefile.close()
