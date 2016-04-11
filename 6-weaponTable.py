@@ -11,13 +11,13 @@ orderedContent = sorted(content, key=str.lower);
 weaponList = []
 for item in orderedContent:
     rawItem = item.split(";")
-    print rawItem
+    #print rawItem
     
     if rawItem[2] in weaponList:
         continue
     weaponList.append(rawItem[2])
 
-print weaponList
+#print weaponList
 
 weaponListFile = open('SQL-weaponList.txt', 'w')
 

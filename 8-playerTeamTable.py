@@ -20,7 +20,7 @@ for item in orderedContent:
         continue
     playerList.append(rawItem1[1])
 
-    print rawItem1[1]+"-"+rawItem2[1]
+    #print rawItem1[1]+"-"+rawItem2[1]
 
     if rawItem2[1] == '0' :
         playerTeamListFile.write("INSERT INTO playerteam (playerid,color) SELECT id,'red' from player WHERE name='"+rawItem1[1]+"';\n")

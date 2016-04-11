@@ -11,14 +11,14 @@ orderedContent = sorted(content, key=str.lower);
 playerList = []
 for item in orderedContent:
     rawItem = item.split(";")
-    print rawItem
+    #print rawItem
     rawItem = rawItem[0].split(":")
     
     if rawItem[1] in playerList:
         continue
     playerList.append(rawItem[1])
 
-print playerList
+#print playerList
 
 playerListFile = open('SQL-playerList.txt', 'w')
 

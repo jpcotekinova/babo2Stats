@@ -31,8 +31,8 @@ statsRatioFile = open(statsRatioFileName, 'w')
 
 for item in orderedContent:
     words = item.split(";")
-    playerName = words[0]
-    playerKilledName = words[2]
+    playerName = words[1]
+    playerKilledName = words[3]
 
     if playerName != playerKilledName:
         if playerName in playerList :
@@ -65,9 +65,9 @@ statsRatioFile.close()
 
 for item in orderedContent:
     words = item.split(";")
-    playerName = words[0]
-    weaponUsed = words[1]
-    playerKilled = words[2]
+    playerName = words[1]
+    weaponUsed = words[2]
+    playerKilled = words[3]
 
     if playerName in statsKilled :
         if playerKilled in statsKilled[playerName] :
