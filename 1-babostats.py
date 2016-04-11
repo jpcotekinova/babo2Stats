@@ -1,5 +1,14 @@
-with open("console.log") as f:
+#!/usr/bin/python
+
+import sys
+
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+with open(sys.argv[1]) as f:
     content = f.read().splitlines()
+
+#filenameList = sys.argv[1].split("-")
 
 playerFile = open('playerFile.txt', 'w')
 killFile = open('killFile.txt', 'w')

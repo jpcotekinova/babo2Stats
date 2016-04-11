@@ -1,4 +1,4 @@
-python 1-babostats.py
+python 1-babostats.py %1
 python 2-killStats.py
 python 4-playerTable.py
 python 5-gameTable.py
