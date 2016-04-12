@@ -1,10 +1,22 @@
 import time
 import operator
-from collections import OrderedDict
 
+
+from collections import OrderedDict
 #playerfile
-with open("playerFile.txt") as playerfile:
-    content = playerfile.read().splitlines()
+import sys
+
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+filenameList = sys.argv[1].split("!")
+filenameList2 = filenameList[1].split(".")
+print filenameList2
+
+currentDate = filenameList2[0]
+
+with open('playerFile!'+currentDate+'.txt') as f:
+    content = f.read().splitlines()
 
 orderedContent = sorted(content, key=str.lower);
 
@@ -23,7 +35,7 @@ for item in orderedContent:
 playerListFile = open('SQL-playerList.txt', 'w')
 
 for player in playerList:
-    playerListFile.write("INSERT INTO Player (name) VALUES ('" +player+"');\n")
+    playerListFile.write("INSERT INTO player (name) VALUES ('" +player+"');\n")
 
 playerListFile.close()
-playerfile.close()
+f.close()

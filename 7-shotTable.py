@@ -2,9 +2,19 @@ import time
 import operator
 from collections import OrderedDict
 
-#killFile
-with open("killFile.txt") as killFile:
-    content = killFile.read().splitlines()
+import sys
+#killfile
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+filenameList = sys.argv[1].split("!")
+filenameList2 = filenameList[1].split(".")
+print filenameList2
+
+currentDate = filenameList2[0]
+
+with open('killFile!'+currentDate+'.txt') as f:
+    content = f.read().splitlines()
 
 orderedContent = sorted(content, key=str.lower);
 
@@ -19,7 +29,7 @@ for item in orderedContent:
     killedName =  rawItem[3]
     
 	#INSERT INTO `shot` (`id`, `killername`, `killedname`, `weaponname`, `timestamp`, `gametime`) VALUES (NULL, 'dd', 'eee', 'eee', '1', '2016-04-06');
-    shotListFile.write("INSERT INTO `shot` (`id`, `killername`, `killedname`, `weaponname`, `timestamp`, `gametime`) VALUES (NULL,'" +killerName+"','"+killedName+"','"+weaponName+"','"+timestamp+"','"+time.strftime("%Y-%m-%d")+"');\n")
+    shotListFile.write("INSERT INTO `shot` (`id`, `killername`, `killedname`, `weaponname`, `timestamp`, `gametime`) VALUES (NULL,'" +killerName+"','"+killedName+"','"+weaponName+"','"+timestamp+"','"+currentDate+"');\n")
 
 shotListFile.close()
-killFile.close()
+f.close()

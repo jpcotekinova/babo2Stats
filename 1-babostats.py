@@ -8,10 +8,14 @@ print 'Argument List:', str(sys.argv)
 with open(sys.argv[1]) as f:
     content = f.read().splitlines()
 
-#filenameList = sys.argv[1].split("-")
+filenameList = sys.argv[1].split("!")
+filenameList2 = filenameList[1].split(".")
+print filenameList2
 
-playerFile = open('playerFile.txt', 'w')
-killFile = open('killFile.txt', 'w')
+currentDate = filenameList2[0]
+
+playerFile = open('playerFile!'+currentDate+'.txt', 'w')
+killFile = open('killFile!'+currentDate+'.txt', 'w')
 
 playerKilledDict = {}
 playerWeaponDict = {}

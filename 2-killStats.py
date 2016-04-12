@@ -1,10 +1,21 @@
 import time
 import operator
 from collections import OrderedDict
+import sys
 
 #KillFile
-with open("killFile.txt") as killFile:
-    content = killFile.read().splitlines()
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+filenameList = sys.argv[1].split("!")
+filenameList2 = filenameList[1].split(".")
+print filenameList2
+
+currentDate = filenameList2[0]
+
+
+with open('killFile!'+currentDate+'.txt') as f:
+    content = f.read().splitlines()
 
 orderedContent = sorted(content, key=str.lower);
 
@@ -19,7 +30,7 @@ statsDied = {}
 
 brief = "BRIEF\n"
 
-timeStr = time.strftime("%d-%m-%Y")
+timeStr = currentDate
 statsKillFileName = "statsKillFile-" + timeStr + ".txt"
 statsDiedFileName = "statsDieFile-" + timeStr + ".txt"
 
@@ -136,6 +147,6 @@ for player in statsDied:
     statsDiedFile.write("\n")    
 
 statsKilledFile.write("\n"+brief+"\n")
-killFile.close()
+f.close()
 statsKilledFile.close()
 statsDiedFile.close()

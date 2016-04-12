@@ -3,8 +3,19 @@ import operator
 from collections import OrderedDict
 
 #killFile
-with open("killFile.txt") as killFile:
-    content = killFile.read().splitlines()
+import sys
+
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+filenameList = sys.argv[1].split("!")
+filenameList2 = filenameList[1].split(".")
+print filenameList2
+
+currentDate = filenameList2[0]
+
+with open('killFile!'+currentDate+'.txt') as f:
+    content = f.read().splitlines()
 
 orderedContent = sorted(content, key=str.lower);
 
@@ -22,7 +33,7 @@ for item in orderedContent:
 weaponListFile = open('SQL-weaponList.txt', 'w')
 
 for weapon in weaponList:
-    weaponListFile.write("INSERT INTO Weapon (name) VALUES ('" +weapon+"');\n")
+    weaponListFile.write("INSERT INTO weapon (name) VALUES ('" +weapon+"');\n")
 
 weaponListFile.close()
-killFile.close()
+f.close()
