@@ -31,10 +31,10 @@ statsDied = {}
 brief = "BRIEF\n"
 
 timeStr = currentDate
-statsKillFileName = "statsKillFile-" + timeStr + ".txt"
-statsDiedFileName = "statsDieFile-" + timeStr + ".txt"
+statsKillFileName = "statsKillFile!" + timeStr + ".txt"
+statsDiedFileName = "statsDieFile!" + timeStr + ".txt"
 
-statsRatioFileName = "statsRatioFile-" + timeStr + ".txt"
+statsRatioFileName = "statsRatioFile!" + timeStr + ".txt"
 
 statsKilledFile = open(statsKillFileName, 'w')
 statsDiedFile = open(statsDiedFileName, 'w')
